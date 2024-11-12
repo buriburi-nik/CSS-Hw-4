@@ -10,7 +10,8 @@ body {
 }
 
 nav {
-    background: url("https://i.pinimg.com/736x/e1/c2/3a/e1c23ac34847740f672717c89a62ae37.jpg");
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(165, 42, 42, 0.8)),
+        url("https://i.pinimg.com/736x/e1/c2/3a/e1c23ac34847740f672717c89a62ae37.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -18,6 +19,8 @@ nav {
     width: 100%;
     box-shadow: 0px 0px 8px black;
     margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
 }
 
 nav > input {
@@ -31,6 +34,8 @@ nav > input {
     color: white;
     border: none;
     padding: 10px;
+    z-index: 2;
+    transition: background-color 0.3s;
 }
 
 input:focus {
@@ -43,6 +48,12 @@ input:focus {
     justify-content: space-evenly;
     align-items: center;
     margin: 30px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.coffee-menu:hover {
+    transform: scale(1.05);
 }
 
 .animated-img {
@@ -50,6 +61,7 @@ input:focus {
     color: rgba(91, 51, 2, 0.8);
     perspective: 1000px;
     transform-style: preserve-3d;
+    position: relative;
 }
 
 .animated-img .img {
@@ -61,7 +73,7 @@ input:focus {
 }
 
 .animated-img:hover .img {
-    transform-style: preserve-3d;
+    transform: rotateY(15deg) rotateX(10deg);
 }
 
 .img img {
@@ -91,15 +103,24 @@ input:focus {
 .des {
     width: 90%;
     margin: 50px auto;
-    background-color: rgba(165, 42, 42, 0.3);
+    background: linear-gradient(135deg, rgba(165, 42, 42, 0.3), rgba(255, 255, 255, 0.5));
     padding: 30px;
     border-radius: 5px;
     box-shadow: 0px 0px 8px brown;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.5s ease;
+}
+
+.des:hover {
+    background-color: rgba(165, 42, 42, 0.5);
 }
 
 .des h1 {
     color: brown;
     margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
 }
 
 .des p {
@@ -116,4 +137,28 @@ input:focus {
 
 .des ol li {
     padding: 5px 0;
+}
+
+.coffee-menu::before {
+    content: "Our Special Coffee Menu";
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    color: brown;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.animated-img::after {
+    content: "Enjoy your coffee!";
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    color: brown;
+    z-index: 2;
 }
