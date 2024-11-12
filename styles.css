@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+body{
+    background-color:rgba(165, 42, 42, 0.2) ;
+}
+
+nav{
+    border: 2px rebeccapurple;
+    background: url("https://i.pinimg.com/736x/e1/c2/3a/e1c23ac34847740f672717c89a62ae37.jpg") center/cover no-repeat;
+    height: 300px;
+    width: 100%;
+    box-shadow: 0 0 8px black;
+    margin-bottom: 40px;
+}
+nav > input{
+    position: sticky;
+    top: 20px;
+    left: 15%;
+    width: 70%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(99, 18, 18, 1);
+    color: beige;
+    border: none;
+    padding: 10px;
+}
